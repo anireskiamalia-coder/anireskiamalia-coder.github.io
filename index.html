@@ -3,344 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Araa</title>
+<title>Araa Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fbc2eb, #fad0c4);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    color:white;
-    filter: saturate(1.2); 
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-@keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-header {
-    text-align:center;
-    padding:40px;
-}
-
-button {
-    padding:10px 18px;
-    margin:5px;
-    border:none;
-    border-radius:20px;
-    cursor:pointer;
-    background:white;
-    color:#ff4fa3;
+body{
+    font-family:'Inter', sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
     transition:0.3s;
-    font-weight:500;
 }
 
-button:hover {
-    background:#ff4fa3;
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    background:rgba(15,23,42,0.8);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#94a3b8;
+    transition:0.3s;
+}
+nav a:hover{color:#f472b6;}
+
+#themeBtn{
+    background:none;
+    border:none;
+    color:#f472b6;
+    font-size:18px;
+    cursor:pointer;
+    margin-left:20px;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.logo img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #f472b6;
+    transition:0.3s;
+}
+.logo:hover img{
+    transform:rotate(5deg) scale(1.1);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10%;
+}
+.hero-text h1{font-size:45px;}
+.hero-text span{color:#f472b6;}
+.hero-text p{color:#94a3b8;margin-top:10px;}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 16px;
+    border-radius:8px;
+    background:#f472b6;
     color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#ec4899;
     transform:translateY(-3px);
 }
 
-main {
-    max-width:700px;
-    margin:auto;
-    padding:0;
+.hero img{
+    width:230px;
     border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    box-shadow:0 10px 40px rgba(244,114,182,0.3);
 }
 
-.section {
-    display:none;
-    opacity:0;
-    transform:translateY(20px);
-    transition:0.4s;
-    padding:35px;
-    text-align:center;
-}
-
-.active {
-    display:block;
-    opacity:1;
-    transform:translateY(0);
-}
-
-#profil {
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color:white;
-}
-
-#about {
-    background: linear-gradient(135deg, #ffc1cc, #ffe4e1);
-    color:#333;
-}
-
-#kontak {
-    background: linear-gradient(135deg, #ff9a9e, #fecfef);
-    color:#333;
-}
-
-#hobby {
-    background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
-    color:#333;
-}
-
-#project {
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-    color:#333;
-}
-/* FOTO PROFILE */
-img {
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:15px;
-    margin:15px 0;
-    transition:0.4s;
-    border:3px solid rgba(255,255,255,0.7);
-    box-shadow: 
-        0 10px 25px rgba(255,105,180,0.4),
-        0 0 15px rgba(255,182,193,0.5);
-}
-
-img:hover {
-    transform:scale(1.05) rotate(1deg);
-    box-shadow: 
-        0 20px 40px rgba(255,105,180,0.6),
-        0 0 25px rgba(255,182,193,0.8);
-}
-
-.lang-btn {
-    position:fixed;
-    top:10px;
-    right:10px;
-}
-
-.badge {
-    display:inline-block;
-    padding:6px 12px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.3);
-    margin-bottom:10px;
-    font-size:12px;
-}
+/* SECTION */
+section{padding:80px 10%;}
+h2{margin-bottom:20px;}
 
 /* CARD */
-.card {
-    background: rgba(255,255,255,0.3);
-    padding:15px;
-    margin:10px 0;
-    border-radius:15px;
-    backdrop-filter: blur(5px);
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-/* LINK */
-a {
+/* SKILL */
+.skill{margin-bottom:15px;}
+.skill-bar{
+    height:8px;
+    background:#334155;
+    border-radius:10px;
+    overflow:hidden;
+}
+.skill-fill{
+    height:100%;
+    background:#f472b6;
+}
+
+/* PROJECT */
+.project-card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    transition:0.3s;
+}
+.project-card:hover{transform:scale(1.03);}
+
+/* CONTACT */
+.contact a{
+    display:block;
+    margin-top:8px;
+    color:#f472b6;
     text-decoration:none;
-    font-weight:500;
+}
+.contact a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    color:#64748b;
 }
 
-#kontak a {
-    color:#333;
+/* LIGHT MODE */
+.light-mode{
+    background:#f8fafc;
+    color:#0f172a;
 }
-
-a:hover {
-    opacity:0.7;
-    text-decoration:underline;
+.light-mode nav{
+    background:rgba(255,255,255,0.8);
+}
+.light-mode .card,
+.light-mode .project-card{
+    background:#e2e8f0;
+}
+.light-mode .skill-bar{
+    background:#cbd5e1;
 }
 </style>
 </head>
 
 <body>
 
-<div class="lang-btn">
-    <button onclick="setLang('id')">ID</button>
-    <button onclick="setLang('en')">EN</button>
-</div>
+<nav>
+    <div class="logo">
+        <img src="logo (2).png">
+        <h3>Ara</h3>
+    </div>
 
-<header>
-    <h1 id="title">Website Pertama Saya</h1>
-    <p id="subtitle">Klik menu untuk melihat isi</p>
-</header>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button onclick="toggleTheme()" id="themeBtn">🌙</button>
+    </div>
+</nav>
 
-<div style="text-align:center;">
-    <button onclick="showSection('profil')" id="btnProfil">Profil</button>
-    <button onclick="showSection('about')" id="btnAbout">About</button>
-    <button onclick="showSection('hobby')" id="btnHobby">Hobby</button>
-    <button onclick="showSection('project')" id="btnProject">Project</button>
-    <button onclick="showSection('kontak')" id="btnKontak">Kontak</button>
-</div>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text" data-aos="fade-right">
+        <h1>Hi, I'm <span>Ani Reski Amalia</span></h1>
+        <p>Mahasiswa yang sedang belajar web development dan terus mengembangkan kemampuan dalam membuat website sederhana dan interaktif.</p>
+        <a href="#projects" class="btn">See My Work</a>
+    </div>
 
-<main>
-
-<!-- PROFIL -->
-<div id="profil" class="section">
-    <div class="badge">PROFILE</div>
-    <h2>Profil</h2>
-
-    <img src="zero two 🎀.jpg"><br>
-
-    <p id="profilText">
-        Aku Araa<br>
-        Umur 19 tahun<br><br>
-        Saya adalah seseorang yang tertarik di bidang teknologi, selain itu saya mahasiswa Unsulbar semester 2 dan sekarang saya baru banget belajar website tipis-tipis.
-    </p>
+    <img src="zero two 🎀.jpg" data-aos="fade-left">
 </div>
 
 <!-- ABOUT -->
-<div id="about" class="section">
-    <div class="badge">ABOUT</div>
-    <h2>About Me</h2>
+<section id="about">
+    <h2 data-aos="fade-up">About Me</h2>
+    <div class="card" data-aos="fade-up">
+        Saya mahasiswa semester 2 yang sedang belajar web development dan membangun website modern secara konsisten.
+    </div>
+</section>
 
-    <p id="aboutText">
-        Saya adalah mahasiswa yang sedang belajar dunia web development. 
-        Saat ini saya fokus memahami dasar-dasar coding dan terus mengembangkan skill saya.
-    </p>
+<!-- SKILLS -->
+<section id="skills">
+    <h2 data-aos="fade-up">Skills</h2>
 
-    <div class="card">
-        <strong>💻 Skill:</strong><br>
-        HTML (dasar)<br>
-        CSS (dasar)<br>
-        JavaScript (pemula)
+    <div class="skill" data-aos="fade-right">
+        JAVA
+        <div class="skill-bar"><div class="skill-fill" style="width:15%"></div></div>
     </div>
 
-    <div class="card">
-        <strong>🎯 Tujuan:</strong><br>
-        Ingin menjadi web developer yang bisa membuat website keren dan interaktif.
+    <div class="skill" data-aos="fade-right">
+        HTML
+        <div class="skill-bar"><div class="skill-fill" style="width:10%"></div></div>
     </div>
 
-    <div class="card">
-        <strong>🔥 Motto:</strong><br>
-        "Belajar sedikit setiap hari lebih baik daripada tidak sama sekali."
-    </div>
-</div>
 
-<!-- HOBBY -->
-<div id="hobby" class="section">
-    <div class="badge">HOBBY</div>
-    <h2>My Hobby</h2>
-
-    <p>Klik hobby untuk lihat detail ✨</p>
-
-    <button onclick="showHobby('anime')">🎬 Nonton Anime</button>
-    <button onclick="showHobby('music')">🎧 Denger Musik</button>
-
-    <div id="hobbyContent" style="margin-top:20px;"></div>
-</div>
-
-<!-- PROJECT -->
- <div id="project" class="section">
-    <div class="badge">PROJECT</div>
-    <h2>My Project</h2>
-
-    <div class="card">
-        <strong>🌸 Personal Portfolio Website</strong><br><br>
-        Ini adalah website portofolio pertama saya yang dibuat menggunakan HTML, CSS, dan JavaScript dasar.  
-        Website ini berisi profil, about me, hobby, dan kontak.
+    <div class="skill" data-aos="fade-right">
+        CSS
+        <div class="skill-bar"><div class="skill-fill" style="width:5%"></div></div>
     </div>
 
-    <div class="card">
-        <strong>🛠️ Tech Used:</strong><br>
-        HTML<br>
-        CSS<br>
+    <div class="skill" data-aos="fade-right">
         JavaScript
+        <div class="skill-bar"><div class="skill-fill" style="width:1%"></div></div>
     </div>
+</section>
 
-    <div class="card">
-        <strong>📌 Status:</strong><br>
-        Project pertama (ongoing learning)
+<!-- PROJECTS -->
+<section id="projects">
+    <h2 data-aos="fade-up">Projects</h2>
+
+    <div class="grid">
+
+        <div class="project-card" data-aos="zoom-in">
+            <strong>Portfolio Website</strong><br><br>
+            Website personal berbasis HTML, CSS, dan JavaScript.
+        </div>
+
+        <div class="project-card" data-aos="zoom-in">
+            <strong>To-Do List App</strong><br><br>
+            Aplikasi dengan fitur checklist dan penyimpanan data<br><br>
+
+        </div>
+
+
+
     </div>
+</section>
 
-</div>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2 data-aos="fade-up">Contact</h2>
 
-<!-- KONTAK (UPDATED 🔥) -->
-<div id="kontak" class="section">
-    <div class="badge">CONTACT</div>
-    <h2>Kontak</h2>
-
-    <div class="card">
-        📧 <strong>Email</strong><br>
+    <div class="card" data-aos="fade-up">
+        Email:
         <a href="mailto:anireskiamalia@gmail.com">anireskiamalia@gmail.com</a>
+
+        WhatsApp:
+        <a href="https://wa.me/6282191033250" target="_blank">Chat WhatsApp</a>
+
+        Instagram:
+        <a href="https://instagram.com/amaliaaa4___" target="_blank">@amaliaaa4___</a>
     </div>
+</section>
 
-    <div class="card">
-        📱 <strong>WhatsApp</strong><br>
-        <a href="https://wa.me/6282191033250" target="_blank">082191033250</a>
-    </div>
+<footer>
+    © 2026 Araa — leveling up.
+</footer>
 
-    <div class="card">
-        📸 <strong>Instagram</strong><br>
-        <a href="https://www.instagram.com/amaliaaa4___/" target="_blank">@amaliaaa4___</a>
-    </div>
-
-    <p style="margin-top:15px; font-size:14px; opacity:0.8;">
-        Silakan hubungi saya untuk diskusi, belajar bareng, atau project kecil 🚀
-    </p>
-</div>
-
-
-
-</main>
-
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
+AOS.init({
+    duration:800,
+    once:true
+});
 
-function setLang(lang) {
-    if(lang === 'en') {
-        document.getElementById('title').innerText = 'My First Website';
-        document.getElementById('subtitle').innerText = 'Click menu to see content';
-        document.getElementById('btnProfil').innerText = 'Profile';
-        document.getElementById('btnAbout').innerText = 'About';
-        document.getElementById('btnKontak').innerText = 'Contact';
-        document.getElementById('aboutText').innerText = 'I am a student learning web development and improving my coding skills step by step.';
+function toggleTheme(){
+    document.body.classList.toggle("light-mode");
+
+    let btn = document.getElementById("themeBtn");
+
+    if(document.body.classList.contains("light-mode")){
+        btn.innerText="☀️";
     } else {
-        document.getElementById('title').innerText = 'Website Pertama Saya';
-        document.getElementById('subtitle').innerText = 'Klik menu untuk melihat isi';
-        document.getElementById('btnProfil').innerText = 'Profil';
-        document.getElementById('btnAbout').innerText = 'About Me';
-        document.getElementById('btnKontak').innerText = 'Kontak';
-        document.getElementById('aboutText').innerText = 'Saya adalah mahasiswa yang sedang belajar dunia web development dan terus mengembangkan skill saya.';
+        btn.innerText="🌙";
     }
-}
-</script>
-
-<script>
-function showHobby(type) {
-    let content = "";
-
-    if(type === "anime") {
-        content = `
-        <div class="card">
-            <strong>Anime Favorit:</strong><br>
-            Naruto Shippuden<br>
-            Attack on Titan<br>
-            One Piece
-            
-        </div>`;
-    }
-
-    else if(type === "music") {
-    content = `
-    <div class="card">
-        <strong>🎵 Lagu Favorit:</strong><br><br>
-
-        <a href="https://open.spotify.com/track/1fDFHXcykq4iw8Gg7s5hG9" target="_blank">
-        ➤ About You - The 1975
-        </a>
-
-    </div>`;
-}
-
-    document.getElementById("hobbyContent").innerHTML = content;
 }
 </script>
 
