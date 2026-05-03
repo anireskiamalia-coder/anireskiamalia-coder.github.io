@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pink Aesthetic Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffeef5, #ffc0cb);
+    color: #333;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+nav h1 {
+    color: #ff4d88;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff4d88;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* FOTO BULAT */
+.profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d88, #ff85a2);
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(255, 77, 136, 0.4);
+}
+
+.hero h2 {
+    font-size: 45px;
+    color: #ff4d88;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff4d88, #ff85a2);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTION */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #ff4d88;
+    margin-bottom: 30px;
+}
+
+/* CARD */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 260px;
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* CONTACT */
+.contact p {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>My Portfolio</h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Project</a>
+        <a href="#hobby">Hobby</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <img src="zero two 🎀.jpg" class="profile">
+
+    <h2>Araaaaa 🌷</h2>
+    <p>Creative Developer | UI Lover | Dreamer</p>
+    <a href="#contact" class="btn">Contact Me</a>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Saya seorang mahasiswa yang memiliki minat dalam pengembangan web dan desain.
+    Saya suka membuat tampilan yang aesthetic dan user-friendly.</p>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="cards">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">Java</div>
+        <div class="card">UI Design</div>
+    </div>
+</section>
+
+<section id="project" class="section">
+    <h2>Projects</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Website pribadi dengan desain modern.</p>
+        </div>
+        <div class="card">
+            <h3>Java App</h3>
+            <p>Aplikasi sederhana berbasis OOP.</p>
+        </div>
+    </div>
+</section>
+
+<section id="hobby" class="section">
+    <h2>Hobby</h2>
+    <div class="cards">
+        <div class="card">🎬 Nonton Anime</div>
+        <div class="card">🎧 Musik</div>
+        <div class="card">✏️ Menggambar</div>
+    </div>
+</section>
+
+<section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Email: anireskiamalia@gmail.com</p>
+    <p>WhatsApp: 0822191033250</p>
+    <p>Instagram: amaliaaa4__</p>
+    <p>Tiktok: chocomatchaaa4_</p>
+</section>
+
+<footer>
+    <p>© 2026 Ani Reski Amalia</p>
+</footer>
+
+</body>
+</html>
